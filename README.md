@@ -12,7 +12,7 @@ Z 世代（1995—2009 年出生）已成为线下演唱会消费主力人群，
 
 ### 技术路线
 
-![研究技术路线](images/fig01_research_framework.png)
+![研究技术路线](output/images/fig01_research_framework.png)
 
 ---
 
