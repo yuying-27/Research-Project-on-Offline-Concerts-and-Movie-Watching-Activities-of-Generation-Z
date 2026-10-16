@@ -63,7 +63,7 @@ Z 世代（1995—2009 年出生）已成为线下演唱会消费主力人群，
 
 ### 样本基本特征
 
-![受访者基本特征分布](images/fig02_sample_demographics.png)
+![受访者基本特征分布](output/images/fig02_sample_demographics.png)
 
 ---
 
@@ -89,17 +89,17 @@ Z 世代（1995—2009 年出生）已成为线下演唱会消费主力人群，
 
 | 肘部法则 | 轮廓系数 |
 |:---:|:---:|
-| ![肘部法则](images/fig03_elbow_method.png) | ![轮廓系数](images/fig04_silhouette_coefficient.png) |
+| ![肘部法则](output/images/fig03_elbow_method.png) | ![轮廓系数](output/images/fig04_silhouette_coefficient.png) |
 
 k=3 时轮廓系数达峰值 0.2612，且簇间边界更清晰；k=4 虽小幅提升簇内同质性但削弱簇间分离度。**最终选取 k=3**。
 
 ### 聚类结果
 
-![K-means聚类散点图](images/fig05_kmeans_pca_scatter.png)
+![K-means聚类散点图](output/images/fig05_kmeans_pca_scatter.png)
 
 PCA 降维至二维：PC1 解释 47.3%，PC2 解释 24.1%，累计 71.4%。
 
-![聚类中心热力图和雷达图](images/fig06_cluster_heatmap_radar.png)
+![聚类中心热力图和雷达图](output/images/fig06_cluster_heatmap_radar.png)
 
 | 消费者类型 | 占比 | 核心特征 | 运营方向 |
 |:---|---:|:---|:---|
@@ -111,7 +111,7 @@ PCA 降维至二维：PC1 解释 47.3%，PC2 解释 24.1%，累计 71.4%。
 
 Bootstrap 有放回重抽样 100 次，计算 Jaccard 相似度：
 
-![Bootstrap Jaccard相似度](images/fig07_bootstrap_jaccard.png)
+![Bootstrap Jaccard相似度](output/images/fig07_bootstrap_jaccard.png)
 
 | 统计量 | 数值 | 阈值 | 结论 |
 |:---|---:|---:|:---|
@@ -127,7 +127,7 @@ Bootstrap 有放回重抽样 100 次，计算 Jaccard 相似度：
 
 对 11 个 Likert 量表题进行主成分分析（PCA），提取 3 个公共因子：
 
-![碎石图](images/fig08_scree_plot.png)
+![碎石图](output/images/fig08_scree_plot.png)
 
 | 因子 | 特征值 | 方差解释率 | 累计 | 命名 |
 |:---|---:|---:|---:|:---|
@@ -135,7 +135,7 @@ Bootstrap 有放回重抽样 100 次，计算 Jaccard 相似度：
 | 因子2 | 2.201 | 24.898% | 52.519% | 价格价值与购票体验 |
 | 因子3 | 1.982 | 20.314% | **72.833%** | 秩序管理与安全保障 |
 
-![因子分析柱状图](images/fig09a_factor_variance.png) ![因子综合重要性](images/fig09b_factor_importance.png)
+![因子分析柱状图](output/images/fig09a_factor_variance.png) ![因子综合重要性](output/images/fig09b_factor_importance.png)
 
 <details>
 <summary>📋 旋转后因子载荷矩阵</summary>
@@ -170,7 +170,7 @@ Bootstrap 有放回重抽样 100 次，计算 Jaccard 相似度：
 
 ### 特征重要性排序
 
-![随机森林特征重要性排序](images/fig10_rf_feature_importance.png)
+![随机森林特征重要性排序](output/images/fig10_rf_feature_importance.png)
 
 | 排名 | 特征 | 重要性 | 累计贡献 |
 |:---:|:---|---:|---:|
@@ -183,7 +183,7 @@ Bootstrap 有放回重抽样 100 次，计算 Jaccard 相似度：
 
 ### 部分依赖图（PDP）——非线性效应分析
 
-![部分依赖图](images/fig11_partial_dependence.png)
+![部分依赖图](output/images/fig11_partial_dependence.png)
 
 | 变量 | 效应方向 | 关键发现 |
 |:---|:---|:---|
@@ -202,11 +202,11 @@ Bootstrap 有放回重抽样 100 次，计算 Jaccard 相似度：
 
 ### LDA 主题模型
 
-![不同k值的LDA模型表现](images/fig12_lda_coherence.png) 
+![不同k值的LDA模型表现](output/images/fig12_lda_coherence.png) 
 
 k=7 时一致性最高，经语义筛选保留 6 个主题：
 
-![主题分布](images/fig13_topic_distribution.png)
+![主题分布](output/images/fig13_topic_distribution.png)
 
 | 主题 | 标签 | 关键词 | 占比 |
 |:---:|:---|:---|---:|
@@ -219,13 +219,13 @@ k=7 时一致性最高，经语义筛选保留 6 个主题：
 
 ### SnowNLP 情感分析
 
-![整体情感分布](images/fig14_sentiment_distribution.png) ![主题情感分析](images/fig15_topic_sentiment.png)
+![整体情感分布](output/images/fig14_sentiment_distribution.png) ![主题情感分析](output/images/fig15_topic_sentiment.png)
 
 各主题负面比例介于 **47.2% ~ 57.0%**，整体消极情绪偏重。
 
 ### 舆情风险指数（关注度 × 负面比例）
 
-![风险分布图](images/fig16_risk_bubble.png)
+![风险分布图](output/images/fig16_risk_bubble.png)
 
 | 主题 | 关注度 | 负面比例 | 风险指数 | 优先级 |
 |:---|---:|---:|---:|:---|
@@ -238,18 +238,18 @@ k=7 时一致性最高，经语义筛选保留 6 个主题：
 
 ### TF-IDF 关键词分析
 
-![TF-IDF关键词排名](images/fig17_tfidf_keywords.png)
+![TF-IDF关键词排名](output/images/fig17_tfidf_keywords.png)
 
 ### 关键词共现网络
 
-![共现网络图](images/fig18_cooccurrence_network.png)
+![共现网络图](output/images/fig18_cooccurrence_network.png)
 
 三大网络结构：
 - **观演体验网络**：位置—座位—实名制（价格与体验匹配）
 - **票务公平网络**：黄牛票—主办方—票务（公平性与透明度）
 - **购票渠道网络**：平台—官方—购票（渠道稳定性）
 
-![度中心性Top15](images/fig19_degree_centrality.png)
+![度中心性Top15](output/images/fig19_degree_centrality.png)
 
 "主办方"连接多个讨论方向，是影响消费者评价的关键枢纽节点。
 
