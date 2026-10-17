@@ -248,10 +248,6 @@ k=7 时一致性最高，第七个主题为无效文本，则经语义筛选保�
 - **票务公平网络**：黄牛票—主办方—票务（公平性与透明度）
 - **购票渠道网络**：平台—官方—购票（渠道稳定性）
 
-![度中心性Top15](output/images/fig19_degree_centrality.png)
-
-"主办方"连接多个讨论方向，是影响消费者评价的关键枢纽节点。
-
 ---
 
 ## 分析模块四：运营优化方案评价（TOPSIS）
@@ -287,82 +283,6 @@ k=7 时一致性最高，第七个主题为无效文本，则经语义筛选保�
 3. **舆情痛点**：座位体验、票务公平、主办方管理为三大核心痛点，"座位安排与实名制度"主题风险指数最高(0.2377)
 
 4. **方案择优**：综合运营优化方案 TOPSIS 贴近度最高(Ci=0.7277)，多维度协同优于单一优化
-
----
-
-## 技术栈
-
-| 类别 | 工具/库 |
-|:---|:---|
-| 语言 | Python 3.9 |
-| 机器学习 | scikit-learn 1.3.0（K-means、随机森林、PCA） |
-| 文本挖掘 | jieba、gensim（LDA）、snownlp（情感分析） |
-| 网络分析 | networkx、python-louvain |
-| 数据处理 | pandas、numpy |
-| 可视化 | matplotlib、seaborn |
-| 统计检验 | scipy、factor_analyzer |
-
-## 项目结构
-
-```
-├── README.md                     # 项目报告（本文件）
-├── data/
-│   ├── variables.md                # 数据变量说明（详细）
-│   ├── raw/                        # 原始数据
-│   │   ├── 问卷量表数据已编码.xlsx          # 550份有效问卷（11个Likert量表题项）
-│   │   ├── 对分配座位制的讨论.xlsx          # 社交媒体爬虫数据（6个Excel）
-│   │   ├── 关于黄牛和主办方的疑云.xlsx
-│   │   ├── 对黄牛票的讨论.xlsx
-│   │   ├── 座位价格与价值的匹配度.xlsx
-│   │   ├── 演唱会的驱动因素.xlsx
-│   │   ├── 秩序问题.xlsx
-│   │   ├── 汇总+分词+分主题.csv            # 已分词合并文本
-│   │   └── 文本分析结果.csv / 第五章_分析结果.csv
-│   └── processed/                # 清洗后数据（运行代码后生成）
-├── code/
-│   ├── 02_consumer_profiling/    # 消费者画像：K-means聚类
-│   │   ├── elbow_silhouette.py             # 肘部法则+轮廓系数确定最优k
-│   │   ├── kmeans_scatter.py              # K-means聚类PCA散点图
-│   │   └── heatmap_radar_validation.py     # 热力图+雷达图+Bootstrap稳定性检验
-│   ├── 03_willingness_prediction/ # 支付意愿预测
-│   │   └── pca_random_forest.py           # 主成分分析+随机森林回归+PDP
-│   ├── 04_sentiment_analysis/    # 舆情分析
-│   │   ├── text_features.py               # TF-IDF关键词+文本特征构建
-│   │   └── lda_snownlp.py                 # LDA主题模型+SnowNLP情感+共现网络
-│   └── 05_strategy_optimization/ # 运营优化
-│       └── topsis_evaluation.py           # TOPSIS综合评价
-├── images/                       # 可视化图表（19张，从论文提取）
-├── results/
-│   ├── tables/                   # 运行后生成统计结果表格
-│   └── figures/                  # 运行后生成高分辨率图表
-└── requirements.txt
-```
-
-## 复现指南
-
-```bash
-# 1. 克隆仓库
-git clone [repo-url]
-
-# 2. 安装依赖
-pip install -r requirements.txt
-
-# 3. 按顺序运行分析模块
-# 模块一：消费者画像（K-means聚类）
-python code/02_consumer_profiling/elbow_silhouette.py
-python code/02_consumer_profiling/kmeans_scatter.py
-python code/02_consumer_profiling/heatmap_radar_validation.py
-
-# 模块二：支付意愿预测（主成分分析+随机森林）
-python code/03_willingness_prediction/pca_random_forest.py
-
-# 模块三：舆情分析（LDA+SnowNLP+TF-IDF+共现网络）
-python code/04_sentiment_analysis/text_features.py
-python code/04_sentiment_analysis/lda_snownlp.py
-
-# 模块四：运营优化（TOPSIS评价）
-python code/05_strategy_optimization/topsis_evaluation.py
-```
 
 ---
 
