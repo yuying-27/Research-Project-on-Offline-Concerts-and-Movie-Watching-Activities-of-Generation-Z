@@ -51,29 +51,6 @@
 
 ---
 
-## 快速开始
-
-```bash
-pip install -r requirements.txt
-
-# 消费者画像
-python code/02_consumer_profiling/elbow_silhouette.py
-python code/02_consumer_profiling/kmeans_scatter.py
-python code/02_consumer_profiling/heatmap_radar_validation.py
-
-# 支付意愿预测
-python code/03_willingness_prediction/pca_random_forest.py
-
-# 舆情与文本分析
-python code/04_sentiment_analysis/text_features.py
-python code/04_sentiment_analysis/lda_snownlp.py
-
-# 方案评价
-python code/05_strategy_optimization/topsis_evaluation.py
-```
-
----
-
 ## 文档导航
 
 | 文档 | 内容 |
